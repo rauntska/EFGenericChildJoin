@@ -26,7 +26,6 @@ namespace EFGenericChildJoin
 
                 using (var dataContext = serviceProvider.GetService<DataContext>())
                 {
-                    var alla = dataContext.Contract.ToList();
                     var contracts = dataContext.Contract.Where(x => true).IncludeResourceAttachment(serviceProvider).ToList();
                     var customers = dataContext.Customer.Where(x => true).IncludeResourceAttachment(serviceProvider).ToList();
                 }
